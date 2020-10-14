@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="input">
+        <h1>Predict Car Price With CarDekho</h1>
+
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="text" name="present_price" placeholder="Eg: 5.2" required="required"><br>
+            <input type="number" name="kms_driven" placeholder="Eg. 17000" required="required"><br>
+            <input type="number" name="year" placeholder="Eg. 2017" required="required"><br>
+            <input type="number" name="owners" placeholder="Eg. 1" required="required"><br>
+            <select name="fuel_type">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="cng">CNG</option>
+            </select><br>
+            <select name="seller_type">
+                <option value="dealer">Dealer</option>
+                <option value="individual">Individual</option>
+            </select><br>
+            <select name="gear_transmission">
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+            </select><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        <br>
+        <br>
+   {{ prediction_text }}
+
+    </div>
+
+</body>
+</html>
