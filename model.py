@@ -27,4 +27,6 @@ y = data_final.iloc[:, 0]
 model = XGBRegressor()
 model.fit(X.values, y.values)
 
-pickle.dump(model, open('model.pkl', 'wb'))
+model.save_model('model.pkl')
+
+# pickle.dump(model, open('model.pkl', 'wb'))
